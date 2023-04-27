@@ -10,26 +10,32 @@ import java.util.Scanner;
 
 public class Ex3_MaiorEMedia {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in); //Abertura da entrada de fluxo de dados através do teclado
 
-        int numero;
-        int maior = 0;
-        int soma = 0;
-        
-        int count = 0;
+        //variáveis
+        double maior = 0; //guarda o maior número
+        double soma = 0; //guarda a soma
+        double media; //guarda a média
+
+        int count = 0; //controla o loop
+        //loop
         do {
-            System.out.println("Número: ");
-            numero = scan.nextInt();
+            System.out.println("Número: "); //Peça um número
+            double numero = scan.nextDouble(); //Entrada de dados, neste caso de um Double.
 
-            soma = soma + numero;
+            if (numero > maior) { //Caso o valor que o usuário digitou seja maior que o valor armazanado na variável maior.
+                maior = numero; //atribua o valor deste número a variável maior.
+            }
 
-            if (numero > maior) maior = numero;
+            soma = soma + numero; //some o número informado pelo usuário com variável soma (independente do valor)
 
-            count = count + 1; //count++
-        } while(count < 5);
+            count = count + 1; //some o valor 1 ao contador, até que invalide a condição do loop. (count < 5)
+        } while (count < 5); //enquanto o contador tiver o valor menor que 5
 
-        System.out.println("Maior: " + maior);
-        System.out.println("Média: " + (soma/5));
+        media = soma / 5; //faça o cálculo da média. (soma/quantidade)
 
+        //imprimindo o maior número digtados e a média dos mesmos
+        System.out.println("Maior: " + maior + " - Média: " + media);
     }
+
 }
